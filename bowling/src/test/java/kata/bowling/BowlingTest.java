@@ -62,6 +62,15 @@ public class BowlingTest
 		Assertions.assertEquals(155, game.getScore(), "Score should be 155");
 	}
 	
+	@Test
+	@DisplayName("Game with junk in the scoring")
+    void JunkScore()
+    {
+		BowlingGame game = new BowlingGame("XqqsdqdXqsdqzazfhX$$$$ X X X X X X3 2 X X");
+        
+        Assertions.assertEquals(253, game.getScore(), "Score should be 253");
+    }
+	
 
 	@AfterEach
 	void tearDown(TestInfo testInfo) {

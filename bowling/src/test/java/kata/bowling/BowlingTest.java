@@ -64,11 +64,20 @@ public class BowlingTest
 	
 	@Test
 	@DisplayName("Game with junk in the scoring")
-    void JunkScore()
+    void junkScore()
     {
 		BowlingGame game = new BowlingGame("XqqsdqdXqsdqzazfhX$$$$ X X X X X X3 2 X X");
         
         Assertions.assertEquals(253, game.getScore(), "Score should be 253");
+    }
+	
+	@Test
+	@DisplayName("Game with only numbers in the scoring")
+    void onlyNumbersScore()
+    {
+		BowlingGame game = new BowlingGame("41352462368190246310");
+        
+        Assertions.assertEquals(70, game.getScore(), "Score should be 70");
     }
 	
 
